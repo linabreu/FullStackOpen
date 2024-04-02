@@ -22,10 +22,13 @@ const App = () => {
       <Button text = "bad" onClick = {increaseBad}></Button>
 
       <h1>Statistics</h1>
-      {total > 0 ? <Statistics good = {good} bad = {bad} neutral = {neutral}/>: <h2>No Feedback Given</h2>}
-     
-
-
+      {total > 0 ? 
+              <table>
+                  <tbody>
+                    <Statistics good = {good} bad = {bad} neutral = {neutral}/>
+                  </tbody>
+              </table>: <h2>No Feedback Given</h2>
+      }
     </div>
   )
 }
