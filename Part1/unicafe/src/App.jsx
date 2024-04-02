@@ -8,6 +8,8 @@ const App = () => {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
 
+  let total = good + bad + neutral;
+
   const increaseGood = () => setGood(good+1);
   const increaseNeutral = () => setNeutral(neutral+1);
   const increaseBad = () => setBad(bad+1);
@@ -18,7 +20,10 @@ const App = () => {
       <Button text = "good" onClick = {increaseGood}></Button>
       <Button text = "neutral" onClick = {increaseNeutral}></Button>
       <Button text = "bad" onClick = {increaseBad}></Button>
-      <Statistics good = {good} bad = {bad} neutral = {neutral}/>
+
+      <h1>Statistics</h1>
+      {total > 0 ? <Statistics good = {good} bad = {bad} neutral = {neutral}/>: <h2>No Feedback Given</h2>}
+     
 
 
     </div>
