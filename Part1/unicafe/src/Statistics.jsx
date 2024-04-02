@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { StatisticsLine } from './StatisticsLine';
 
 const Statistics = ({good, bad, neutral}) => {
 
@@ -11,12 +12,12 @@ const Statistics = ({good, bad, neutral}) => {
   return (
     <div>
         <div>
-            <p>good: {good}</p>
-            <p>neutral: {neutral}</p>
-            <p>bad: {bad}</p>
-            <p>all: {total}</p>
-            <p>average: {(total)/3}</p>
-            <p>positive percentage: {(good/total)*100}%</p>
+            <StatisticsLine text = "good" value = {good}/>
+            <StatisticsLine text = "neutral" value = {neutral}/>
+            <StatisticsLine text = "bad" value = {bad}/>
+            <StatisticsLine text = "total" value = {total}/>
+            <StatisticsLine text = "average" value = {(total)/3}/>
+            <StatisticsLine text = "posiive percentage" value = {(good/total)*100}/>
         </div>
     </div>
   )
