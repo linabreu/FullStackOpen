@@ -14,7 +14,7 @@ const App = () => {
 
   const getRandomNumber = () => {
     const max = (anecdotes.length -1)
-    console.log(max)
+    //console.log(max)
     const min = 0
     let result = Math.round(Math.random() * (max - min) + min)
     return result
@@ -26,17 +26,29 @@ const App = () => {
     setSelected(newNumber)
   }
 
+  const countVote = () => {
+    console.log(`current votes are ${votes}`)
+    setVotes(votes.concat(selected))
+    console.log(votes)
+  }
+
 
   
    
   const [selected, setSelected] = useState(0)
+  const [votes, setVotes] = useState([]);
 
   return (
     <div>
       {anecdotes[selected]}
+      <p>{votes}</p>
 
       <div>
         <button onClick = {clickFunction}>Get Anecdote</button>
+      </div>
+      
+      <div>
+        <button onClick = {() => countVote(selected)}>Vote</button>
       </div>
 
     </div>
