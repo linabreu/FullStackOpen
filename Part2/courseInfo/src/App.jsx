@@ -1,6 +1,9 @@
+import Course from "./Components/Course"
 
+console.log("test")
 
 const App = () => {
+
   const course = {
     id: 1,
     name: 'Half Stack application development',
