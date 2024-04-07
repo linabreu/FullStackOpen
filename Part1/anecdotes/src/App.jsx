@@ -12,7 +12,8 @@ const App = () => {
     'The only way to go fast, is to go well.'
   ]
 
-  const getRandomNumber = () => {
+  const getRandomNumber = () => 
+  {
     const max = (anecdotes.length -1)
     //console.log(max)
     const min = 0
@@ -20,21 +21,20 @@ const App = () => {
     return result
   }
 
-  const clickFunction = () => {
+  const clickFunction = () => 
+  {
     let newNumber = getRandomNumber();
     console.log(`new number is ${newNumber}`)
     setSelected(newNumber)
   }
 
-  const countVote = () => {
+  const countVote = () => 
+  {
     console.log(`current votes are ${votes}`)
     setVotes(votes.concat(selected))
     console.log(votes)
   }
 
-
-  
-   
   const [selected, setSelected] = useState(0)
   const [votes, setVotes] = useState([]);
 
