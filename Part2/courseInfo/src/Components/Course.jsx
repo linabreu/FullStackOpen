@@ -5,14 +5,24 @@ import Total from './Total';
 
 
 
-const Course = ({course}) => {
+const Course = (courses) => {
   return (
     <div>
-      <Header name = {course.name}/>
-      
-      {course.parts.map(part =>
-        <Content key = {part.id} name = {part.name} exercises = {part.exercises}/> )
-      }
+    {courses.courses.map(course => (
+      <div key = {course.id}>
+        <div><Header name = {course.name}/></div>
+        <ul>
+          {course.parts.map(part => (
+          <div key={part.id}>
+            <li>
+              {part.name}
+            </li>
+          </div>
+          ))}
+        </ul>
+        <p>Total of {course.parts.reduce((sum, {exercises}) => sum + exercises, 0)} exercises </p>
+      </div>
+    ))}
 
 
 
